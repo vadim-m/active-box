@@ -564,8 +564,20 @@ body {
 
   font-size: 0.875;
   line-height: 1.5;
-  color: #808080;
-  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
 
   padding: 1.5rem 0;
+}
+
+.copyright__text {
+  margin-bottom: 0.5rem;
+}
+
+.copyright__link {
+  color: #fff;
+}
+
+.copyright__link--main {
+  color: #e84545;
+  font-weight: bold;
 }
