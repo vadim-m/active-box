@@ -92,6 +92,16 @@ body {
   z-index: 10;
 }
 
+.header.fixed {
+  position: fixed;
+  background-color: #2c3049;
+}
+
+.header.fixed .header__inner {
+  height: 4rem;
+  border-bottom: none;
+}
+
 .header__logo {
   height: 24px;
 }
@@ -863,6 +873,11 @@ body {
   .container {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  /* intro */
+  .intro {
+    padding: 7.5rem 0 2rem 0;
   }
 
   /* features */
