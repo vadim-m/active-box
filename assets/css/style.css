@@ -92,6 +92,14 @@ body {
   z-index: 10;
 }
 
+.header__logo {
+  height: 24px;
+}
+
+.header__burger {
+  display: none;
+}
+
 .header__inner {
   height: 6.25rem;
   display: flex;
@@ -131,15 +139,10 @@ body {
   opacity: 1;
 }
 
-/* ---burger--- */
-.burger {
-  display: none;
-}
-
 /* Burger-menu */
 .burger-menu {
   width: 30px;
-  padding: 15px;
+  height: 24px;
 
   border: none;
   cursor: pointer;
@@ -177,6 +180,7 @@ body {
   right: 0;
   bottom: 0;
 
+  transform: translate(0, -50%);
   cursor: pointer;
   transition: all 0.5s linear;
 }
@@ -690,7 +694,7 @@ body {
   }
 
   /* burger */
-  .burger {
+  .header__burger {
     display: block;
   }
 
