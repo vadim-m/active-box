@@ -66,7 +66,8 @@ body {
   width: 100%;
   max-width: 1200px;
 
-  padding: 0 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 0 auto;
 }
 
@@ -130,6 +131,77 @@ body {
   opacity: 1;
 }
 
+/* ---burger--- */
+.burger {
+  display: none;
+}
+
+/* Burger-menu */
+.burger-menu {
+  width: 30px;
+  padding: 15px;
+
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+}
+
+.burger-menu.active .burger-menu__item {
+  background-color: transparent;
+  transition: all 0.15s linear;
+}
+
+.burger-menu.active .burger-menu__item:after {
+  top: 0;
+  transform: rotate(45deg);
+  background-color: #d52424;
+}
+
+.burger-menu.active .burger-menu__item:before {
+  top: 0;
+  transform: rotate(-45deg);
+  background-color: #d52424;
+}
+
+.burger-menu__item {
+  height: 4px;
+  width: 100%;
+
+  background-color: #66697e;
+
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.burger-menu__item:before,
+.burger-menu__item:after {
+  content: "";
+  width: 100%;
+  height: 4px;
+
+  background-color: #66697e;
+
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 0;
+
+  transition: all 0.3s linear;
+}
+
+.burger-menu__item:after {
+  top: -10px;
+  left: 0;
+}
+
 /* ---intro--- */
 .intro {
   display: flex;
@@ -169,7 +241,6 @@ body {
   font-size: 1.375rem;
   font-weight: 400;
   line-height: 1.5;
-  margin: 0;
 
   margin: 0 0 4.75rem;
 }
@@ -487,7 +558,7 @@ body {
 .download__container {
   color: #2d3033;
   text-align: center;
-  padding: 6.25rem;
+  padding: 6.25rem 0;
 }
 
 .download__title {
@@ -562,14 +633,14 @@ body {
   background-color: #313454;
   text-align: center;
 
-  font-size: 0.875;
+  font-size: 0.875rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.5);
 
-  padding: 1.5rem 0;
+  padding: 1.2rem 0;
 }
 
-.copyright__text {
+.copyright__text:not(:last-child) {
   margin-bottom: 0.5rem;
 }
 
@@ -580,4 +651,251 @@ body {
 .copyright__link--main {
   color: #e84545;
   font-weight: bold;
+}
+
+/* ---Media Queries--- */
+
+/* Устройства Large, тут проверяю по 992рх */
+@media (max-width: 1199.98px) {
+  /* container */
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  /* intro */
+  .intro__inner {
+    max-width: 50rem;
+  }
+
+  .intro__title {
+    font-size: 3.5rem;
+  }
+
+  /* reviews */
+  .reviews__info {
+    max-width: calc(100vw / 2 - 30px);
+  }
+
+  .reviews__text {
+    font-size: 2rem;
+  }
+}
+
+/* Устройства Medium, тут проверяю по 768рх */
+@media (max-width: 991.98px) {
+  /* nav */
+  .nav {
+    display: none;
+  }
+
+  /* burger */
+  .burger {
+    display: block;
+  }
+
+  /* intro */
+  .intro {
+    min-height: 40rem;
+  }
+
+  .intro__title {
+    font-size: 2.5rem;
+  }
+
+  /* features */
+  .features__container {
+    padding: 3.5rem 30px;
+  }
+
+  .features__item {
+    padding: 0 1rem;
+  }
+
+  /* works */
+  .works {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .works__item:nth-child(2n) {
+    border-right: none;
+  }
+
+  /* team */
+  .team__container {
+    padding: 3.5rem 30px;
+  }
+
+  .team__item {
+    width: 23.5%;
+  }
+
+  .team__prof {
+    font-size: 0.688rem;
+    margin-bottom: 0.8rem;
+  }
+
+  /* reviews */
+  .reviews__content {
+    padding: 3.5rem 0;
+  }
+
+  .reviews__info {
+    padding-left: 3rem;
+  }
+
+  /* download */
+  .download__container {
+    padding: 3.5rem 30px;
+  }
+
+  /* footer */
+  .footer__inner {
+    padding: 3.5rem 0;
+  }
+
+  .footer__item {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Устройства Small, тут проверяю по 576рх */
+@media (max-width: 767.98px) {
+  /* header */
+  .header__inner {
+    height: 5rem;
+  }
+
+  /* intro */
+  .intro {
+    padding: 9rem 0 3rem 0;
+    min-height: auto;
+  }
+
+  .intro__title {
+    font-size: 2rem;
+  }
+
+  .intro__subtitle {
+    font-size: 1.2rem;
+    margin: 0 0 2.5rem;
+  }
+
+  /* features */
+  .features__inner {
+    margin: 0 0 -2rem;
+  }
+
+  .features__item {
+    width: 50%;
+    margin: 0 0 2rem;
+  }
+
+  /* team */
+  .team__item {
+    width: 49%;
+  }
+
+  /* reviews */
+  .reviews__item {
+    flex-wrap: wrap;
+  }
+
+  .reviews__photo,
+  .reviews__content {
+    width: 100%;
+  }
+
+  .reviews__photo {
+    padding-bottom: 56.25%;
+  }
+
+  .reviews__info {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+
+  .reviews__text {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .reviews__author {
+    font-size: 0.688rem;
+  }
+
+  /* download */
+  .download__desc {
+    font-size: 0.688rem;
+    margin: 0 0 1.5rem;
+  }
+
+  /* footer */
+  .footer__inner {
+    padding: 2.5rem 0;
+  }
+
+  .footer__item {
+    width: 100%;
+  }
+
+  /* .footer__item:last-child {
+    width: 100%;
+  } */
+
+  .footer__item:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  /* copyright */
+  .copyright {
+    line-height: 1.2;
+  }
+}
+
+/* Устройства X-Small, тут проверяю по 320рх */
+@media (max-width: 575.98px) {
+  /* container */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* features */
+  .features__item {
+    width: 100%;
+  }
+
+  .features__icon,
+  .features__title {
+    margin-bottom: 0.8rem;
+  }
+
+  /* works */
+  .works {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .works__item {
+    border-right: none;
+  }
+
+  /* reviews */
+  .reviews__info {
+    padding: 0 15px;
+  }
+
+  .reviews__text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .reviews__author {
+    font-size: 0.625rem;
+  }
+
+  /* team */
+  .team__item {
+    width: 100%;
+  }
 }
