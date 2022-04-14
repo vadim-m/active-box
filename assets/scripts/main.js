@@ -1,8 +1,11 @@
 $(function () {
-  // fixed header
+  // Page Elements
   const header = $("#header");
   const intro = $("#intro");
+  const burger = $("#burger-menu");
+  const nav = $("#nav");
 
+  // Fixed Header
   let introHeight = intro.innerHeight();
   let scrollPosition = $(window).scrollTop();
 
@@ -17,9 +20,12 @@ $(function () {
     }
   });
 
-  // smooth scroll
+  // Smooth Scroll
   $("[data-scroll]").on("click", function (event) {
     event.preventDefault();
+
+    nav.removeClass("active");
+    burger.toggleClass("active");
 
     let element = $(this).data("scroll");
     let elementOffset = $(element).offset().top;
@@ -32,5 +38,13 @@ $(function () {
       "fast",
       "linear"
     );
+  });
+
+  // Toggle Navigation on Mobile Devices
+  burger.on("click", function (event) {
+    event.preventDefault();
+
+    burger.toggleClass("active");
+    nav.toggleClass("active");
   });
 });
