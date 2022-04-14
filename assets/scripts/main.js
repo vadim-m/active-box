@@ -4,6 +4,7 @@ $(function () {
   const intro = $("#intro");
   const burger = $("#burger-menu");
   const nav = $("#nav");
+  const slider = $("#reviews-slider");
 
   // Fixed Header
   let introHeight = intro.innerHeight();
@@ -46,5 +47,14 @@ $(function () {
 
     burger.toggleClass("active");
     nav.toggleClass("active");
+  });
+
+  // Reviews-slider Slick: https://kenwheeler.github.io/slick
+  slider.slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
   });
 });
