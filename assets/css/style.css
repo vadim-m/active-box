@@ -521,7 +521,7 @@ body {
 }
 /* а после инициализации слайдера делаем её auto */
 /* таким образом слайдер не сильно прыгает при загрузке*/
-.slick-initialized {
+.reviews__slider.slick-initialized {
   height: auto;
 }
 
