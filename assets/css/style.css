@@ -514,6 +514,17 @@ body {
 }
 
 /* ---reviews--- */
+/* фиксируем высоту при загрузке страниц */
+.reviews__slider {
+  height: 480px;
+  overflow: hidden;
+}
+/* а после инициализации слайдера делаем её auto */
+/* таким образом слайдер не сильно прыгает при загрузке*/
+.slick-initialized {
+  height: auto;
+}
+
 .reviews__item {
   display: flex;
   flex-wrap: wrap;
