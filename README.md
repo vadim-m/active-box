@@ -1,5 +1,12 @@
-# active-box
+# ActiveBox Landing page
 
-This is a simple website.
+[Deploy](https://vadim-m.github.io/active-box/)
 
-Author: Monastyrskiy V.M.
+Адаптивная верстка лендинга ActiveBox (HTML, CSS, БЭМ и jQuery). 
+
+- Semantic HTML
+- Flexbox CSS
+- BEM
+- Media queries (RWD)
+- jQuery
+- Smooth Scroll 
